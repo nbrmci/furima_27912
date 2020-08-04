@@ -17,10 +17,10 @@
 
 ### Association
 
--has_one :credit
--has_one :address
--has_many :items
--has_many :comments
+- has_one :credit
+- has_one :address
+- has_many :items
+- has_many :comments
 
 ## creditテーブル
 
@@ -32,7 +32,7 @@
 
 ### Association
 
--belongs_to :user
+- belongs_to :user
 
 ## addressテーブル
 
@@ -47,7 +47,7 @@
 
 ### Association
 
--belongs_to :user
+- belongs_to :user
 
 ## itemsテーブル
 
@@ -70,14 +70,14 @@
 
 ### Association
 
--belongs_to :user
--has_many :comments
--belongs_to :category
--belongs_to :condition
--belongs_to :shipping_charge
--belongs_to :shipping_region
--belongs_to :brand
--belongs_to :purchase_status
+- belongs_to :user
+- has_many :comments
+- belongs_to :category
+- belongs_to :condition
+- belongs_to :shipping_charge
+- belongs_to :shipping_region
+- belongs_to :brand
+- belongs_to :purchase_status
 
 ## commentsテーブル
 
@@ -89,8 +89,8 @@
 
 ### Association
 
--belongs_to :user
--belongs_to :item
+- belongs_to :user
+- belongs_to :item
 
 ## categoryテーブル
 
@@ -100,7 +100,7 @@
 
 ### Association
 
--has_many :items
+- has_many :items
 
 ## conditionテーブル
 
@@ -110,7 +110,7 @@
 
 ### Association
 
--has_many :items
+- has_many :items
 
 ## shipping_chargeテーブル
 
@@ -120,7 +120,7 @@
 
 ### Association
 
--has_many :items
+- has_many :items
 
 ## shipping_regionテーブル
 
@@ -130,7 +130,7 @@
 
 ### Association
 
--has_many :items
+- has_many :items
 
 ## brandテーブル
 
@@ -140,7 +140,7 @@
 
 ### Association
 
--has_many :items
+- has_many :items
 
 ## purchase_statusテーブル
 
@@ -150,4 +150,4 @@
 
 ### Association
 
--has_many :items
+- has_many :items
