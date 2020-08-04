@@ -39,11 +39,6 @@
 |image|string|null: false|
 |name|string|null: false, add_index: true|
 |describe|text|null: false|
-|category_id|integer|null: false, foreign_key: true|
-|condition_id|integer|null: false, foreign_key: true|
-|shipping_charge_id|integer|null: false, foreign_key: true|
-|shipping_region_id|integer|null: false, foreign_key: true|
-|brand_id|integer|null: false, foreign_key: true|
 |Purchase_status_id|integer|null: false, foreign_key: true|
 |days_until_shipping|string|null: false|
 |price|integer|null: false|
@@ -55,11 +50,11 @@
 - has_one :address
 - has_many :comments
 - belongs_to_active_hash :prefecture
-- belongs_to :category
-- belongs_to :condition
-- belongs_to :shipping_charge
-- belongs_to :shipping_region
-- belongs_to :brand
+- belongs_to_active_hash :category
+- belongs_to_active_hash :condition
+- belongs_to_active_hash :shipping_charge
+- belongs_to_active_hash :shipping_region
+- belongs_to_active_hash :brand
 - belongs_to :purchase_status
 
 ## commentsテーブル
@@ -74,56 +69,6 @@
 
 - belongs_to :user
 - belongs_to :item
-
-## categoryテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-
-- has_many :items
-
-## conditionテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-
-- has_many :items
-
-## shipping_chargeテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-
-- has_many :items
-
-## shipping_regionテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-
-- has_many :items
-
-## brandテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-
-- has_many :items
 
 ## purchase_statusテーブル
 
