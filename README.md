@@ -15,7 +15,6 @@
 
 ### Association
 
-- has_one :address
 - has_many :items
 - has_many :comments
 
