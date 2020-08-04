@@ -41,6 +41,10 @@
 |image|string|null: false|
 |name|string|null: false, add_index: true|
 |describe|text|null: false|
+|category|integer|null: false|
+|condition|integer|null: false|
+|shipping_charge|integer|null: false|
+|shipping_region|integer|null: false|
 |Purchase_status_id|integer|null: false, foreign_key: true|
 |days_until_shipping|integer|null: false|
 |price|integer|null: false|
@@ -56,7 +60,6 @@
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :shipping_charge
 - belongs_to_active_hash :shipping_region
-- belongs_to_active_hash :brand
 - belongs_to :purchase_status
 - belongs_to_active_hash :days_until_shipping
 
