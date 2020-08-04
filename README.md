@@ -17,6 +17,7 @@
 
 - has_many :items
 - has_many :comments
+- has_one :purchase_status
 
 ## addressテーブル
 
@@ -60,7 +61,7 @@
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :shipping_charge
 - belongs_to_active_hash :shipping_region
-- belongs_to :purchase_status
+- has_one :purchase_status
 - belongs_to_active_hash :days_until_shipping
 
 ## commentsテーブル
