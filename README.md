@@ -28,6 +28,7 @@
 |address|string|null: false|
 |building_name|string|
 |phone_number|string|null: false|
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
 
@@ -64,7 +65,7 @@
 |------|----|-------|
 |comment|text|
 |user_id|integer|null: false, foreign_key: true|
-|items_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
 
