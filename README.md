@@ -23,7 +23,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |postal_code|string|null: false|
-|prefectures|string|null: false|
 |city|string|null: false|
 |address|string|null: false|
 |building_name|string|
@@ -57,6 +56,7 @@
 - belongs_to :user
 - has_one :address
 - has_many :comments
+- belongs_to_active_hash :prefecture
 - belongs_to :category
 - belongs_to :condition
 - belongs_to :shipping_charge
