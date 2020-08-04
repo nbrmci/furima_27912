@@ -18,18 +18,6 @@
 - has_many :items
 - has_many :comments
 
-## creditテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|credit_number|string|null: false|
-|expiration_month|integer|null: false|
-|expiration_year|integer|null: false|
-
-### Association
-
-- belongs_to :user
-
 ## addressテーブル
 
 |Column|Type|Options|
