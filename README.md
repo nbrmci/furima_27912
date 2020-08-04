@@ -80,8 +80,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
 
-- has_many :items
+- belongs_to :user
+- belongs_to :item
