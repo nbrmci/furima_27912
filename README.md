@@ -47,8 +47,6 @@
 |Purchase_status_id|integer|null: false, foreign_key: true|
 |days_until_shipping|string|null: false|
 |price|integer|null: false|
-|sales_commission|integer|null: false|
-|sales_profit|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
