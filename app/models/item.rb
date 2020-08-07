@@ -6,14 +6,14 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_region
   belongs_to_active_hash :days_until_shipping
 
-  #空の投稿を保存できないようにする
-  validates :title, :text, :category, presence: true
-  validates :title, :text, :condition, presence: true
-  validates :title, :text, :shipping_charge, presence: true
-  validates :title, :text, :shipping_region, presence: true
-  validates :title, :text, :days_until_shipping, presence: true
+  with_options presence: true do
+    validates :title, :text, :category
+    validates :title, :text, :condition
+    validates :title, :text, :shipping_charge
+    validates :title, :text, :shipping_region
+    validates :title, :text, :days_until_shipping
+  end
 
-  #選択が「--」のままになっていないか
   with_options numericality: { other_than: 1 } do
     validates :category_id
     validates :condition_id
