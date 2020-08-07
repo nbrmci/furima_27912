@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'ユーザー登録情報' do
+    it "nickname、email、パスワード、姓（カナ）、名（カナ）、誕生日がある場合、有効である" do
+      ＠user = FactoryBot.build(:user)
+      expect(＠user).to be_valid
+    end
     before do
       @user = FactoryBot.build(:user)
     end
