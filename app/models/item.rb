@@ -7,11 +7,11 @@ class Item < ApplicationRecord
   belongs_to_active_hash :days_until_shipping
 
   with_options presence: true do
-    validates :title, :text, :category
-    validates :title, :text, :condition
-    validates :title, :text, :shipping_charge
-    validates :title, :text, :shipping_region
-    validates :title, :text, :days_until_shipping
+    validates :category
+    validates :condition
+    validates :shipping_charge
+    validates :shipping_region
+    validates :days_until_shipping
   end
 
   with_options numericality: { other_than: 1 } do
