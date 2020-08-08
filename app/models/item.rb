@@ -19,6 +19,7 @@ class Item < ApplicationRecord
     validates :shipping_charge
     validates :shipping_region
     validates :days_until_shipping
+    validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 999999 }
   end
 
   with_options numericality: { only_integer: true } do
