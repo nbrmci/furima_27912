@@ -14,12 +14,14 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :category
-    validates :condition
-    validates :shipping_charge
-    validates :shipping_region
-    validates :days_until_shipping
-    validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 999999 }
+    validates :name
+    validates :describe
+    validates :category_id
+    validates :condition_id
+    validates :shipping_charge_id
+    validates :shipping_region_id
+    validates :days_until_shipping_id
+    validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9999999 }
   end
 
   with_options numericality: { only_integer: true } do
