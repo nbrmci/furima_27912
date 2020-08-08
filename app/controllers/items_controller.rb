@@ -4,9 +4,36 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
   end
 
   def create
+    # binding.pry
+    @item = Item.new(item_params)
+    @item.user_id = current_user.id 
+    if @item.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(
+      :image,
+      :name,
+      :describe,
+      :category_id,
+      :condition_id,
+      :shipping_charge_id,
+      :shipping_region_id,
+      :purchase_status_id,
+      :days_until_shipping_id,
+      :price,
+      :user_id
+    )
   end
 
 end
