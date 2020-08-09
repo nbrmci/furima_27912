@@ -6,19 +6,30 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_region
   belongs_to_active_hash :days_until_shipping
 
+  belongs_to :user
+  has_one :address
+  has_many :comments
+  has_one :purchase_status
+
+  has_one_attached :image
+
   with_options presence: true do
-    validates :category
-    validates :condition
-    validates :shipping_charge
-    validates :shipping_region
-    validates :days_until_shipping
+    validates :name
+    validates :describe
+    validates :category_id
+    validates :condition_id
+    validates :shipping_charge_id
+    validates :shipping_region_id
+    validates :days_until_shipping_id
+    validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9999999 }
   end
 
-  with_options numericality: { other_than: 1 } do
+  with_options numericality: { only_integer: true } do
     validates :category_id
     validates :condition_id
     validates :shipping_charge_id
     validates :shipping_region_id
     validates :days_until_shipping_id
   end
+
 end
