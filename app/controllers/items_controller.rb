@@ -8,9 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    # binding.pry
-    @item = Item.new(item_params)
-    @item.user_id = current_user.id 
+    @item = Item.new(item_params) 
     if @item.save
       redirect_to root_path
     else
@@ -33,7 +31,7 @@ class ItemsController < ApplicationController
       :days_until_shipping_id,
       :price,
       :user_id
-    )
+    ).merge(user_id: current_user.id)
   end
 
 end
