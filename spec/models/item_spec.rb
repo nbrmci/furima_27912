@@ -13,6 +13,7 @@ RSpec.describe Item, type: :model do
       @days_until_shipping =FactoryBot.build(:days_until_shipping)
       expect(@item).to be_valid
     end
+
     before do
       @user = FactoryBot.build(:user)
       @item = FactoryBot.build(:item)
@@ -105,12 +106,6 @@ RSpec.describe Item, type: :model do
       @item.condition_id = "aaaa"
       @item.valid?
       expect(@item.errors.full_messages).to include("Condition is not a number")
-    end
-
-    it 'category_idは整数でなければ出品できないこと' do
-      @item.category_id = "aaaa"
-      @item.valid?
-      expect(@item.errors.full_messages).to include("Category is not a number")
     end
 
     it 'shipping_charge_idは整数でなければ出品できないこと' do
