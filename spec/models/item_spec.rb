@@ -7,12 +7,20 @@ RSpec.describe Item, type: :model do
       @item = FactoryBot.build(:item)
       @user = FactoryBot.build(:user)
       @category = FactoryBot.build(:category)
+      @condition = FactoryBot.build(:condition)
+      @shipping_charge = FactoryBot.build(:shipping_charge)
+      @shipping_region = FactoryBot.build(:shipping_region)
+      @days_until_shipping =FactoryBot.build(:days_until_shipping)
       expect(@item).to be_valid
     end
     before do
       @user = FactoryBot.build(:user)
       @item = FactoryBot.build(:item)
       @category = FactoryBot.build(:category)
+      @condition = FactoryBot.build(:condition)
+      @shipping_charge = FactoryBot.build(:shipping_charge)
+      @shipping_region = FactoryBot.build(:shipping_region)
+      @days_until_shipping =FactoryBot.build(:days_until_shipping)
     end
 
     it '商品名がないと出品できないこと' do
@@ -57,7 +65,7 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Shipping charge is not a number")
     end
 
-    it '配送料の負担がないと出品できないこと' do
+    it '発送までの日数がないと出品できないこと' do
       @item.days_until_shipping_id = nil
       @item.valid?
       expect(@item.errors.full_messages).to include("Days until shipping is not a number")
