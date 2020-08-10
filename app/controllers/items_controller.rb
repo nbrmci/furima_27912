@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :edit]
 
   def index
     @items = Item.all.order("created_at DESC")
@@ -17,6 +18,22 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    item = Item.find(params[:id])
+    item.update(item_params)
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+  end
+
   private
 
   def item_params
@@ -33,6 +50,10 @@ class ItemsController < ApplicationController
       :price,
       :user_id
     ).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
