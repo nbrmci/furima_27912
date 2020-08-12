@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
       :days_until_shipping_id,
       :price,
       :user_id
-    ).merge(user_id: current_user.id)
+    ).merge(user_id: current_user.id, purchase_status: 0)
   end
 
   def set_item
