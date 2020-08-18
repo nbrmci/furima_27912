@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :credit_address do
 
+    token {"sampletokensampletoken"}
     postal_code {"123-4567"}
     prefecture {1}
     city {"横浜市"}
