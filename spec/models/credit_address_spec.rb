@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe CreditAddress, type: :model do
-  # 
   describe '住所の保存' do
     before do
      @credit_address = FactoryBot.build(:credit_address)
