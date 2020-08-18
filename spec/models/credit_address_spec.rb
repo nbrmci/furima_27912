@@ -11,6 +11,12 @@ RSpec.describe CreditAddress, type: :model do
       expect(@credit_address).to be_valid
     end
 
+    it 'クレジット情報（token）がないと保存できないこと' do
+      @credit_address.token = nil
+      @credit_address.valid?
+      expect(@credit_address.errors.full_messages).to include("Token can't be blank")
+    end
+
     it '郵便番号が空だと保存できないこと' do
       @credit_address.postal_code = nil
       @credit_address.valid?

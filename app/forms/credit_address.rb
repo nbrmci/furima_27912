@@ -4,6 +4,7 @@ class CreditAddress
   attr_accessor :postal_code, :prefecture, :city, :address, :building_name, :phone_number, :user_id, :item_id, :token, :price
 
   with_options presence: true do
+    validates :token
     with_hyphen = /\A\d{3}[-]\d{4}\z/
     validates :postal_code, format: { with: with_hyphen }
     zenkaku_japanese = /\A[ぁ-んァ-ン一-龥]/
