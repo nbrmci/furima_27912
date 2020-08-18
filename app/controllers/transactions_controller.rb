@@ -2,10 +2,10 @@ class TransactionsController < ApplicationController
 
   require 'payjp'
 
+  before_action :set_item, only: [:index, :correct_user, :sold_item, :pay_item]
   before_action :correct_user, only: :index
   before_action :sold_item
   before_action :login_check, only: :index
-  before_action :set_item, only: [:index, :correct_user, :sold_item, :pay_item]
 
   def index
   end

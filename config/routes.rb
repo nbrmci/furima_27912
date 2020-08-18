@@ -5,8 +5,7 @@ Rails.application.routes.draw do
 
   root to: 'items#index'
   resources :items do
-    resources :transactions do
-    end
+    resources :transactions
   end
 
 end
