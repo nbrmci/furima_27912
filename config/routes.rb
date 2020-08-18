@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :items do
     resources :transactions do
-      # patch 'item_transactions', to: 'transactions#create'
     end
   end
 
