@@ -5,7 +5,7 @@ RSpec.describe Item, type: :model do
   describe '出品機能のテスト' do
     it "商品名、商品説明、カテゴリー情報、商品状態情報、配送料の負担、発送元の地域、発送までの日数、価格情報が必須かつ価格の範囲が300円から9,999,999円の間である場合有効である" do
       @item = FactoryBot.build(:item)
-      @user = FactoryBot.build(:user)
+      @seller = FactoryBot.build(:seller)
       @category = FactoryBot.build(:category)
       @condition = FactoryBot.build(:condition)
       @shipping_charge = FactoryBot.build(:shipping_charge)
@@ -15,7 +15,7 @@ RSpec.describe Item, type: :model do
     end
 
     before do
-      @user = FactoryBot.build(:user)
+      @seller = FactoryBot.build(:seller)
       @item = FactoryBot.build(:item)
       @category = FactoryBot.build(:category)
       @condition = FactoryBot.build(:condition)
