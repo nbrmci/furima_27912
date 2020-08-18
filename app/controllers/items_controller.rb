@@ -51,11 +51,10 @@ class ItemsController < ApplicationController
       :condition_id,
       :shipping_charge_id,
       :shipping_region_id,
-      :purchase_status_id,
       :days_until_shipping_id,
       :price,
       :user_id
-    ).merge(user_id: current_user.id, purchase_status: 0)
+    ).merge(user_id: current_user.id)
   end
 
   def set_item
