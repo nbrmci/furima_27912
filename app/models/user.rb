@@ -17,6 +17,6 @@ class User < ApplicationRecord
 
   has_many :items
   has_many :comments
-  has_one :purchase_status
+  has_one :order
 
 end

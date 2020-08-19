@@ -10,7 +10,7 @@ FactoryBot.define do
     shipping_region_id {1}
     days_until_shipping_id {1}
     price {1000}
-    association :user, factory: :user
+    association :user, factory: :seller
   end
 
   factory :category do
