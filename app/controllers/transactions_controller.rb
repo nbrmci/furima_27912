@@ -12,7 +12,6 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @order = CreditAddress.new(order_params)
     if @order.valid?
       pay_item
