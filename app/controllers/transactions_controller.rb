@@ -2,19 +2,17 @@ class TransactionsController < ApplicationController
 
   require 'payjp'
 
-  before_action :set_item, only: [:index, :correct_user, :sold_item, :pay_item]
+  before_action :set_item, only: [:index, :correct_user, :pay_item]
   before_action :correct_user, only: :index
-  before_action :sold_item
   before_action :login_check, only: :index
+  before_action :sold_item
 
   def index
-  end
-
-  def new
     @order = CreditAddress.new
   end
 
   def create
+    # binding.pry
     @order = CreditAddress.new(order_params)
     if @order.valid?
       pay_item
@@ -40,13 +38,14 @@ class TransactionsController < ApplicationController
   end
 
   def sold_item
+    @item = Item.find(params[:item_id])
     if @item.order.present?
       redirect_to root_path
     end
   end
 
  def order_params
-   params.permit(:price, :token, :postal_code, :prefecture, :city, :address, :building_name, :phone_number, :item_id).merge(user_id: current_user.id)
+   params.permit(:token, :price, :postal_code, :prefecture, :city, :address, :building_name, :phone_number, :item_id, :user_id).merge(user_id: current_user.id)
  end
 
  def pay_item
